@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crop || Agrikol</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest' %}">
+
+    <!-- Fonts-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Css-->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-select.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-datepicker.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/vegas.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nouislider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nouislider.pips.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/agrikol_iconl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.css' %}">
+    <!-- Template styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+</head>
+
+<body>
+
+    <div class="preloader">
+        <img src="{% static 'assets/images/loader.png' %}" class="preloader__image" alt="">
+    </div><!-- /.preloader -->
+
+    <div class="page-wrapper">
+
+
+        <div class="site_header__header_five_wrap">
+            <div class="topbar-three topbar-five">
+                <div class="container-box">
+                    <div class="topbar_three_content clearfix">
+                        <div class="logo-box-three logo-box-five float-left ml-8">
+                            <a href="{% url 'home' %}" class="main-nag__logo">
+                                <img src="{% static 'assets/images/resources/logo-3.png' %}" width="142px" height="66px"> 
+                            </a>
+                        </div>
+
+                        <div class="topbar_three_nav_box float-right">
+                            <nav class="header-navigation stricky clearfix">
+                                <div class="container">
+                                    <div class="main_nav_header_three_content five clearfix">
+                                        <div class="mobile_menu_icon_three five">
+                                            <a href="#" class="side-menu__toggler">
+                                                <i class="fa fa-bars"></i>
+                                            </a>
+                                        </div>
+                                        <div class="main-nav__main-navigation five float-left">
+                                            <ul class="main-nav__navigation-box">
+                                                <li>
+                                                    <a href="{% url 'home' %}">Home</a>                                                    
+                                                </li>
+                                                <li class="current">
+                                                    <a href="{% url 'crop' %}">Crop</a>                                                    
+                                                </li> 
+                                                <li>
+                                                    <a href="{% url 'crop_recommend' %}">Recommend</a>
+                                                </li>                                                                                                       
+                                                <li>
+                                                    <a href="{% url 'about_us' %}">About</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{% url 'contact_us' %}">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </div>                                        
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>                    
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <section class="page-header" style="background-image: url({% static 'assets/images/backgrounds/page-header-contact.jpg' %});">
+            <div class="container">
+                <h2>Crops</h2>
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="{% url 'home' %}">Home</a></li>                    
+                    <li><span>Crop</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="product">
+            <div class="container">
+                <div>
+                    <!--End Sidebar Wrapper-->
+                    <div>
+                        <div class="product-items">
+
+                            <div class="all_products">
+                                <div class="row">
+                                    {% for crop in crops %}                                    
+                                        <div class="col-xl-3 col-lg-4 col-md-6 p-2">
+                                            <div class="all_products_single text-center">
+                                                <div class="all_product_item_image">
+                                                    <img src="{% static 'assets/images/'%}{{crop.crop_image}}" alt="" width="284.01px" height="211.20px">
+                                                    <div class="all_product_hover">
+                                                        <div class="all_product_icon">
+                                                            <a href="{% url 'crop'%}{{crop.crop_name}}/"><span class="fa fa-eye"></span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h4><a href="{% url 'crop'%}{{crop.crop_name}}/">{{crop.crop_name}}</a></h4>                                            
+                                            </div>
+                                        </div>
+                                    {% endfor %}                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>           
+
+        <div class="site-footer_bottom">
+            <div class="container">
+                <div class="site-footer_bottom_copyright">
+                    <p>@ All copyright 2021, <a href="{% url 'home' %}">agrikol.com</a></p>
+                </div>                
+            </div>
+        </div>
+
+
+
+
+    </div><!-- /.page-wrapper -->
+
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <div class="side-menu__block">
+
+
+        <div class="side-menu__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <div class="side-menu__top justify-content-end">
+
+                <a href="#" class="side-menu__toggler side-menu__close-btn"><img
+                        src="{% static 'assets/images/shapes/close-1-1.png' %}" alt=""></a>
+            </div><!-- /.side-menu__top -->
+
+
+            <nav class="mobile-nav__container">
+                <!-- content is loading via js -->
+            </nav>
+            <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+            <div class="side-menu__content">
+                <p><a href="mailto:info@agrikol.com">info@agrikol.com</a> <br> <a href="tel:+1 888 999 0000">+1 888 999 0000</a></p>                
+            </div><!-- /.side-menu__content -->
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+
+
+
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/TweenMax.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/js/swiper.min.js' %}"></script>
+    <script src="{% static 'assets/js/typed-2.0.11.js' %}"></script>
+    <script src="{% static 'assets/js/vegas.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static 'assets/js/nouislider.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.js' %}"></script>
+    <script src="{% static 'assets/js/appear.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-ui.js' %}"></script>
+
+    <!-- template scripts -->
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+</body>
+
+</html>
