@@ -34,4 +34,4 @@
     
 
 ## Accuracy
-**I have created this project in XGBoost algorithm. Among this, the accuracy of the project the crop recommendation system is 99%.**
+**I have created this project in XGBoost algorithm. Among this, the accuracy of the crop recommendation system is 99%.**
