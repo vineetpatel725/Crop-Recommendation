@@ -28,8 +28,7 @@
     |   |   ├── models.py       
     |   |   ├── tests.py       
     |   |   ├── urls.py       
-    |   |   ├── views.py       
-    |   |   └── car price prediction.ipynb
+    |   |   └── views.py           
     │   └── manage.py                       
     
 
