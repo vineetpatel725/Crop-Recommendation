@@ -15,7 +15,7 @@
     |   |   ├── __init__.py       
     |   |   ├── settings.py
     |   |   ├── urls.py
-    |   |   ├── wsgi.py
+    |   |   └── wsgi.py
     │   ├── CropRecommendationApp           
     |   |   ├── __pycache__
     |   |   ├── migrations
@@ -29,7 +29,7 @@
     |   |   ├── tests.py       
     |   |   ├── urls.py       
     |   |   ├── views.py       
-    |   |   ├── car price prediction.ipynb
+    |   |   └── car price prediction.ipynb
     │   └── manage.py                       
     
 
